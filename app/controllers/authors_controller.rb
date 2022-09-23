@@ -8,7 +8,7 @@ class AuthorsController < ApplicationController
 
   def show
     author = Author.find(params[:id])
-    render json: author, includes: ['profile', 'posts', 'posts.tags']
+    render json: author #, includes: ['profile', 'posts', 'posts.tags']
   end
 
   private
@@ -16,5 +16,4 @@ class AuthorsController < ApplicationController
   def render_not_found_response
     render json: { error: "Author not found" }, status: :not_found
   end
-
 end
