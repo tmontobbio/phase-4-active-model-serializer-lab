@@ -1,7 +1,6 @@
 class AuthorPostSerializer < ActiveModel::Serializer
-  attributes :title, :short_content
+  attributes :title, :short_content, :tags
   has_many :tags
-
   def short_content
     #implied self self.object.content
     "#{object.content[0..39]}..."
